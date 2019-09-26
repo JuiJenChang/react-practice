@@ -8,7 +8,7 @@ class Bmi extends Component {
         this.state = {
             height: '',
             weight: '',
-            bmi: '',
+            bmi: null,
             result: ''
         }
     }
@@ -59,32 +59,38 @@ class Bmi extends Component {
 
     resetInput = () => {
         this.setState({
-            height: 0,
-            weight: 0,
-            bmi: 0
+            height: '',
+            weight: '',
+            bmi: ''
         })
     }
 
     render() {
         return (
-            <div>
-                <h2>BMI Healthy Weight Calculator</h2>
-                <span>Body Mass Index(BMI) = {this.state.bmi}</span>
-                <h3>{this.state.result}</h3>
-                <div>
-                    Height(cm)
+            <div className="bmi-body">
+                <h1 className="bmi-h1">BMI Healthy Weight Calculator</h1>
+                <div className="bmi-main">
+                    <span className="bmi-span">Body Mass Index(BMI) = {this.state.bmi}</span>
+                    <h3 className="bmi-h3">{this.state.result}</h3>
+                    <div className="bmi-h">
+                        Height(cm)
                 <input
+                        className="bmi-input-h"
                         value={this.state.height}
                         onChange={this.heightInput}
                     />
-                    Weight(kg)
+                    </div>
+                    <div className="bmi-w">
+                        Weight(kg)
                 <input
+                        className="bmi-input-w"
                         value={this.state.weight}
                         onChange={this.weightInput}
                         onKeyDown={this.bmiCalaulator}
                     />
+                    </div>
+                    <button className="bmi-btn" onClick={this.resetInput}>RESET</button>
                 </div>
-                <button onClick={this.resetInput}>RESET</button>
             </div>
         );
     }

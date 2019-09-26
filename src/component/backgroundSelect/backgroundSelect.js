@@ -20,11 +20,11 @@ class Background extends Component {
     render() {
         return (
             <div>
-                <div className="content">
-                    <div className="main" style={{ backgroundColor: this.state.color }}>
-                        <h1>Hello, World!!</h1>
-                        <p>What color?</p>
-                        <select value={this.state.color} onChange={this.change}>
+                <div className="background-content">
+                    <div className="background-main" style={{ backgroundColor: this.state.color }}>
+                        <h1 className="background-h1">Hello, World!!</h1>
+                        <p className="background-p">What color?</p>
+                        <select className="background-select" value={this.state.color} onChange={this.change}>
                             <option value="blue">Blue</option>
                             <option value="red">Red</option>
                             <option value="green">Green</option>

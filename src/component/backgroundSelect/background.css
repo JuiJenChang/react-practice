@@ -1,9 +1,9 @@
-.content{
+.background-content{
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  .main{
+  .background-main{
     display: flex;
     flex-direction: column;
     width: 500px;
@@ -11,17 +11,17 @@
     margin-top: 200px;
     border: 10px #969191 solid;
   }
-  h1{
+  .background-h1{
     color: #ffffff;
     font-size: 50px;
     margin-left: 50px;
   }
-  p{
+  .background-p{
     color: #ffffff;
     font-size: 15px;
     margin-left: 50px;
   }
-  select{
+  .background-select{
     width: 70%;
     font-size: 20px;
     margin-left: 50px;
