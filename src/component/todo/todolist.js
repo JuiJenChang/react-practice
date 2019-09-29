@@ -43,26 +43,24 @@ class Todo extends Component {
             <div className="todo-body">
                 <div className="todo-content">
                     <div className="todo-main">
-                    <h1 className="todo-h1">To Do:</h1>
-                    <input
-                        className="todo-input"
-                        value={this.state.task}
-                        onChange={this.handleTask}
-                        onKeyDown={this.addTsak}
-                        placeholder='   Add task'
-                    />
-                    <div className="todo-list">
-                        {this.state.taskList.map((item, i) =>
-                            <li key={i}>
-                                <input type="checkbox" />
-                                {item}
-                                <MdCancel 
-                                className="todo-cancel"
-                                onClick={() => this.deleteTask(i)}/>
-                            </li>
-                        )}
+                        <h1 className="todo-h1">To Do:</h1>
+                        <input
+                            className="todo-input"
+                            value={this.state.task}
+                            onChange={this.handleTask}
+                            onKeyDown={this.addTsak}
+                            placeholder='   Add task'
+                        />
+                            {this.state.taskList.map((item, i) =>
+                                <li className="todo-list" key={i}>
+                                    <input type="checkbox" />
+                                    {item}
+                                    <MdCancel
+                                        className="todo-cancel"
+                                        onClick={() => this.deleteTask(i)} />
+                                </li>
+                            )}
                     </div>
-                </div>
                 </div>
             </div>
         );
