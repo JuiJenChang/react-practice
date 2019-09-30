@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './todo.css';
 import { MdCancel } from "react-icons/md";
+import Todoitem from './todoItem';
 
 class Todo extends Component {
     constructor(props) {
@@ -44,6 +45,7 @@ class Todo extends Component {
                 <div className="todo-content">
                     <div className="todo-main">
                         <h1 className="todo-h1">To Do:</h1>
+                        <Todoitem />
                         <input
                             className="todo-input"
                             value={this.state.task}
@@ -53,8 +55,10 @@ class Todo extends Component {
                         />
                             {this.state.taskList.map((item, i) =>
                                 <li className="todo-list" key={i}>
-                                    <input type="checkbox" />
-                                    {item}
+                                    <input
+                                      type="checkbox"
+                                    />
+                                    <span>{item}</span>
                                     <MdCancel
                                         className="todo-cancel"
                                         onClick={() => this.deleteTask(i)} />
