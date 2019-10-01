@@ -5,15 +5,13 @@ class Todoitem extends Component {
         super()
 
         this.state = {
-            task: '',
             status: false,
         }
     }
    
     checkItem = () => {
-       const newTask = this.state.status ? 'unActive' : 'isActive'
         this.setState({
-            task: newTask
+            status: !this.state.status
         })
     }
 
@@ -24,7 +22,7 @@ class Todoitem extends Component {
                   type="checkbox"
                   onChange={this.checkItem}
                 />
-                {this.state.task}
+                {this.state.status ? 'isActive' : 'unActive'}
             </div>
         );
     }
