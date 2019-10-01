@@ -11,7 +11,7 @@ class Todoitem extends Component {
    
     checkItem = () => {
         this.setState({
-            status: true
+            status: !this.state.status
         })
     }
 
