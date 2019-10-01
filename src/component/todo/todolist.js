@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './todo.css';
 import { MdCancel } from "react-icons/md";
-import Todoitem from './todoItem';
 
 class Todo extends Component {
     constructor(props) {
@@ -10,6 +9,7 @@ class Todo extends Component {
         this.state = {
             taskList: [],
             task: '',
+            status: false,
         }
     }
 
@@ -39,13 +39,18 @@ class Todo extends Component {
         })
     }
 
+    checkItem = () => {
+        this.setState({
+            status: !this.state.status
+        })
+    }
+
     render() {
         return (
             <div className="todo-body">
                 <div className="todo-content">
                     <div className="todo-main">
                         <h1 className="todo-h1">To Do:</h1>
-                        <Todoitem />
                         <input
                             className="todo-input"
                             value={this.state.task}
@@ -53,17 +58,18 @@ class Todo extends Component {
                             onKeyDown={this.addTsak}
                             placeholder='   Add task'
                         />
-                            {this.state.taskList.map((item, i) =>
-                                <li className="todo-list" key={i}>
-                                    <input
-                                      type="checkbox"
-                                    />
-                                    <span>{item}</span>
-                                    <MdCancel
-                                        className="todo-cancel"
-                                        onClick={() => this.deleteTask(i)} />
-                                </li>
-                            )}
+                        {this.state.taskList.map((item, i) =>
+                            <li className="todo-list" key={i}>
+                                <input
+                                    type="checkbox"
+                                    onChange={this.checkItem}
+                                />
+                                <span style={{ textDecorationLine: this.state.status ? 'line-through' : 'none' }}>{item}</span>
+                                <MdCancel
+                                    className="todo-cancel"
+                                    onClick={() => this.deleteTask(i)} />
+                            </li>
+                        )}
                     </div>
                 </div>
             </div>
