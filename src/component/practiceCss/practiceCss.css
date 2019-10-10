@@ -1,0 +1,65 @@
+.practiceCss-body{
+    background: #eee383;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+.practiceCss-header{
+    background: #44a176;
+    width: 250px;
+    height: 100vh;
+    position: relative;
+}
+.practiceCss-img{
+    width: 180px;
+    border-radius: 100%;
+    border: #eee383 5px solid;
+    position: absolute; top: 5%; left: 10%;
+    box-shadow: 0 0 0 5px #3ecc8a;  
+}
+.practiceCss-h2{
+    color: #ffffff;
+    position: absolute; top: 32%; left: 10%;
+}
+.practiceCss-ul{   
+    color: #ffffff;
+    list-style: none;
+    background: #3ecc8a;
+    position: absolute; top: 40%; 
+    width: 250px;
+    height: 423px;
+    padding: 0;
+}
+.practiceCss-li{
+    margin-top: 20px;
+    cursor:pointer;
+}
+.practiceCss-li:hover{
+    background-color: #0000001a;
+}
+.practiceCss-icon{
+    margin-left: 10px;
+    font-size: 25px;
+    vertical-align: sub;	
+}
+.practiceCss-li-span{
+    margin-left: 10px;
+    font-size: 20px;
+}
+.practiceCss-main{
+    position: absolute; top: 40%; left: 40%;
+    background: #00000033;
+    text-align: center;
+    padding: 40px 65px;
+    border-radius: 20px;
+}
+.practiceCss-p{
+    color: #eee383;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.practiceCss-span{
+    color: #00000033;
+}
