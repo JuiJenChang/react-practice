@@ -5,6 +5,25 @@ import { MdWork } from "react-icons/md";
 import { GoOrganization } from "react-icons/go";
 import { GoTools } from "react-icons/go";
 
+const sideBarList = [
+    {
+        icon: <IoMdSpeedometer />,
+        title: 'Dashboard'
+    },
+    {
+        icon: <MdWork />,
+        title: 'Customers'
+    },
+    {
+        icon: <GoOrganization />,
+        title: 'Users'
+    },
+    {
+        icon: <GoTools />,
+        title: 'Settings'
+    }
+];
+
 class PersonPage extends Component {
     render() {
         return (
@@ -18,18 +37,14 @@ class PersonPage extends Component {
                             <h2 className="practiceCss-h2">Jui-Jen Chang</h2>
                         </div>
                         <ul className="practiceCss-ul">
-                            <li className="practiceCss-li">
-                                <IoMdSpeedometer className="practiceCss-icon"/>
-                                <span className="practiceCss-li-span">Dashboard</span></li>
-                            <li className="practiceCss-li">
-                                <MdWork className="practiceCss-icon"/>
-                                <span className="practiceCss-li-span">Customers</span></li>
-                            <li className="practiceCss-li">
-                                <GoOrganization className="practiceCss-icon"/>
-                                <span className="practiceCss-li-span">Users</span></li>
-                            <li className="practiceCss-li">
-                                <GoTools className="practiceCss-icon"/>
-                                <span className="practiceCss-li-span">Settings</span></li>
+                            {
+                                sideBarList.map((item, i) =>
+                                    <li key={i} className="practiceCss-li">
+                                        <div className="practiceCss-icon">{item.icon}</div>
+                                        <span className="practiceCss-li-span">{item.title}</span>
+                                    </li>
+                                )
+                            }
                         </ul>
                     </div>
                     <div className="practiceCss-main">

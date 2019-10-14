@@ -40,11 +40,13 @@
 .practiceCss-icon{
     margin-left: 10px;
     font-size: 25px;
-    vertical-align: sub;	
+    vertical-align: sub;
+    display: inline;
 }
 .practiceCss-li-span{
     margin-left: 10px;
     font-size: 20px;
+    display: inline;
 }
 .practiceCss-main{
     position: absolute; top: 40%; left: 40%;
