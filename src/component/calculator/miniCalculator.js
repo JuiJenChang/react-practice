@@ -28,28 +28,30 @@ class Calculator extends Component {
                 })
             }
         }
+        console.log(this.state.input);
     }
     calculatorNums = () => {
         if (this.state.input[1] === '+') {
             this.setState({
-                input: this.state.input[0] + this.state.input[2],
+                input: [this.state.input[0] + this.state.input[2]],
             })
         }
         if (this.state.input[1] === '-') {
             this.setState({
-                input: this.state.input[0] - this.state.input[2],
+                input: [this.state.input[0] - this.state.input[2]],
             })
         }
         if (this.state.input[1] === '*') {
             this.setState({
-                input: this.state.input[0] * this.state.input[2],
+                input: [this.state.input[0] * this.state.input[2]],
             })
         }
         if (this.state.input[1] === '/') {
             this.setState({
-                input: this.state.input[0] / this.state.input[2],
+                input: [this.state.input[0] / this.state.input[2]],
             })
         }
+        console.log(this.state.input);
     }
 
     clearInput = () => {
@@ -61,7 +63,9 @@ class Calculator extends Component {
     render() {
         return (
             <div className="calculator-content">
-                <input value={this.state.input} />
+                <div className="calculator-view">
+                    {this.state.input}
+                </div>
                 <div>
                     <input type="button" onClick={() => this.handleInput(1)} value={this.state.nums[1]} />
                     <input type="button" onClick={() => this.handleInput(2)} value={this.state.nums[2]} />
